@@ -1,16 +1,11 @@
 export const navLinks = [
   {
-    label: 'Projects',
-    pathname: '/#project-1',
-  },
-
-  // {
-  //   label: 'Articles',
-  //   pathname: '/articles',
-  // },
-  {
     label: 'Profile',
     pathname: '/#about',
+  },
+  {
+    label: 'Projects',
+    pathname: '/#project-1',
   },
   {
     label: 'Resume',
@@ -20,6 +15,10 @@ export const navLinks = [
     label: 'Contact',
     pathname: '/contact',
   },
+  // {
+  //   label: 'Articles',
+  //   pathname: '/articles',
+  // },
 ];
 
 export const socialLinks = [
