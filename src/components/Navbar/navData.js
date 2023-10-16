@@ -3,13 +3,18 @@ export const navLinks = [
     label: 'Projects',
     pathname: '/#project-1',
   },
+
+  // {
+  //   label: 'Articles',
+  //   pathname: '/articles',
+  // },
   {
-    label: 'Details',
-    pathname: '/#details',
+    label: 'Profile',
+    pathname: '/#about',
   },
   {
-    label: 'Articles',
-    pathname: '/articles',
+    label: 'Resume',
+    pathname: '/#about',
   },
   {
     label: 'Contact',
@@ -19,18 +24,13 @@ export const navLinks = [
 
 export const socialLinks = [
   {
-    label: 'Twitter',
-    url: 'https://twitter.com/hamishMW',
-    icon: 'twitter',
-  },
-  {
-    label: 'Figma',
-    url: 'https://www.figma.com/@Hamish',
-    icon: 'figma',
+    label: 'LinkedIn',
+    url: 'https://www.linkedin.com/in/irvintancioco',
+    icon: 'linkedin',
   },
   {
     label: 'Github',
-    url: 'https://github.com/HamishMW',
+    url: 'https://github.com/itancio',
     icon: 'github',
   },
 ];

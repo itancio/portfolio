@@ -1,23 +1,31 @@
 {
   "name": "portfolio",
   "version": "1.0.0",
-  "homepage": "https://hamishw.com",
-  "description": "Portfolio site for Hamish Williams",
-  "repository": "https://github.com/HamishMW/portfolio.git",
-  "author": "Hamish Williams <hello@hamishw.com>",
+  "homepage": "https://tancioco.com",
+  "description": "Portfolio site for Irvin Tancioco",
+  "repository": "https://github.com/itancio/portfolio.git",
+  "author": "Irvin Tancioco <itancio@berkeley.edu>",
   "devDependencies": {
     "@mapbox/rehype-prism": "^0.8.0",
     "@storybook/addon-a11y": "^6.5.10",
     "@storybook/addon-actions": "^6.5.10",
     "@storybook/addon-controls": "^6.5.10",
+    "@storybook/addon-essentials": "^7.4.6",
+    "@storybook/addon-interactions": "^7.4.6",
+    "@storybook/addon-links": "^7.4.6",
+    "@storybook/addon-onboarding": "^1.0.8",
     "@storybook/addon-toolbars": "^6.5.10",
+    "@storybook/blocks": "^7.4.6",
     "@storybook/builder-webpack5": "^6.5.10",
     "@storybook/manager-webpack5": "^6.5.10",
+    "@storybook/nextjs": "^7.4.6",
     "@storybook/react": "^6.5.10",
+    "@storybook/testing-library": "^0.2.2",
     "@svgr/webpack": "^6.3.1",
     "esbuild": "^0.15.2",
     "eslint": "^8.21.0",
     "eslint-config-next": "^12.2.5",
+    "eslint-plugin-storybook": "^0.6.15",
     "fs-extra": "^10.1.0",
     "globby": "^13.1.2",
     "postcss": "^8.4.16",
@@ -39,22 +47,24 @@
   "dependencies": {
     "framer-motion": "^7.1.0",
     "mdx-bundler": "^9.0.1",
-    "next": "^12.2.5",
+    "next": "^13.5.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "three": "^0.146.0",
-    "three-stdlib": "^2.18.1"
+    "three-stdlib": "^2.18.1",
+    "yarn": "^1.22.19"
   },
   "scripts": {
     "dev": "next dev",
     "build": "next build && next export -o build/",
     "build:storybook": "build-storybook -o build-storybook && node scripts/draco-storybook",
-    "deploy": "aws s3 sync --delete build/ s3://hamish-portfolio-site",
-    "deploy:storybook": "aws s3 sync --delete build-storybook s3://hamish-portfolio-storybook",
+    "deploy": "aws s3 sync --delete build/ s3://irvint-portfolio-site",
+    "deploy:storybook": "aws s3 sync --delete build-storybook s3://irvint-portfolio-storybook",
     "deploy:functions": "cd functions && npm run deploy",
     "start": "next start",
     "test": "echo 'write some tests'",
-    "storybook": "start-storybook -p 9009 -h localhost"
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "browserslist": {
     "production": [
@@ -72,5 +82,10 @@
   "engines": {
     "npm": ">=8.6.0",
     "node": ">=18.0.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:storybook/recommended"
+    ]
   }
 }

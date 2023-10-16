@@ -16,7 +16,7 @@ export const Button = forwardRef(({ href, ...rest }, ref) => {
   }
 
   return (
-    <RouterLink passHref href={href} scroll={false}>
+    <RouterLink passHref href={href} scroll={false} legacyBehavior>
       <ButtonContent href={href} ref={ref} {...rest} />
     </RouterLink>
   );
