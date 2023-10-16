@@ -6,9 +6,11 @@ import { Button } from 'components/Button';
 import { DecoderText } from 'components/DecoderText';
 import { Divider } from 'components/Divider';
 import { Heading } from 'components/Heading';
+import { Icon } from 'components/Icon';
 import { Image } from 'components/Image';
 import { Link } from 'components/Link';
 import { Section } from 'components/Section';
+import { Table, TableBody, TableCell, TableHeadCell, TableRow } from 'components/Table';
 import { Text } from 'components/Text';
 import { Transition } from 'components/Transition';
 import { Fragment, useState } from 'react';
@@ -18,15 +20,53 @@ import styles from './Profile.module.css';
 const ProfileText = ({ visible, titleId }) => (
   <Fragment>
     <Heading className={styles.title} data-visible={visible} level={3} id={titleId}>
-      <DecoderText text="Hi there" start={visible} delay={500} />
+      <DecoderText text="Hi there!" start={visible} delay={250} />
     </Heading>
-    <Text className={styles.description} data-visible={visible} size="l" as="p">
-      I’m Irvin, TODO edit this later{' '}
-      <Link href="https://www.qwilr.com">Qwilr</Link>. My projects include UX design, UI
-      animations, and icon illustration. Being comfortable with code allows me to rapidly
-      prototype and validate experiences. If you’re interested in the tools and software I
-      use check out my <Link href="/uses">uses page</Link>.
+    <Text className={styles.description} data-visible={visible} size="l" as="p" delay={500}>
+      Irvin here. I recently graduated this summer of 2023 at the University of California Berkeley with a degree
+      in Electrical Engineering and Computer Science. I am transitioning into software engineering
+      with a strong focus on merging human-centric design with software.I am enthusiastic
+      about harnessing Machine Learning and Artificial Intelligence to drive
+      responsible and ethically grounded technological innovations.
     </Text>
+    <br /><br /><br /><br />
+    <Heading className={styles.title} data-visible={visible} level={3}>
+      <DecoderText text="Skills" start={visible} delay={750} />
+    </Heading>
+    
+    <Table delay={1000}>
+      <TableBody>
+        <TableRow>
+          <TableHeadCell>Technical</TableHeadCell>
+          <TableCell>
+          <Text className={styles.description} data-visible={visible} size="8px" as="p">
+              UX Design, Software Engineering, Agile Software Development, Algorithms,
+              Optimization, SaaS, Data Structure, Artificial Intelligence, Cybersecurity,
+              Signals and Systems
+              
+            </Text>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableHeadCell>Languages</TableHeadCell>
+          <TableCell>
+            <Text className={styles.description} data-visible={visible} size="8px" as="p">
+              Python, Java, C++, C, Golang, HTML, CSS, Ruby, Javascript
+            </Text>   
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableHeadCell>Framework/ Tools</TableHeadCell>
+          <TableCell>
+            <Text className={styles.description} data-visible={visible} size="8px" as="p">
+              Adobe Suite, Figma, Git(Hub), React, Rails,
+              Bootstrap, Numpy, Kubernetes, AWS, Cucumber
+            </Text>
+          </TableCell>
+        </TableRow>
+      </TableBody>
+    </Table>
+
   </Fragment>
 );
 
@@ -50,7 +90,7 @@ export const Profile = ({ id, visible, sectionRef }) => {
           <div className={styles.content}>
             <div className={styles.column}>
               <ProfileText visible={visible} titleId={titleId} />
-              <Button
+              {/* <Button
                 secondary
                 className={styles.button}
                 data-visible={visible}
@@ -58,7 +98,7 @@ export const Profile = ({ id, visible, sectionRef }) => {
                 icon="send"
               >
                 Send me a message
-              </Button>
+              </Button> */}
             </div>
             <div className={styles.column}>
               <div className={styles.tag} aria-hidden>
@@ -69,7 +109,7 @@ export const Profile = ({ id, visible, sectionRef }) => {
                   collapseDelay={1000}
                 />
                 <div className={styles.tagText} data-visible={visible}>
-                  About Me
+                  Focusing On
                 </div>
               </div>
               <div className={styles.image}>
@@ -79,7 +119,7 @@ export const Profile = ({ id, visible, sectionRef }) => {
                   placeholder={profileImgPlaceholder}
                   srcSet={[profileImg, profileImgLarge]}
                   sizes={`(max-width: ${media.mobile}px) 100vw, 480px`}
-                  alt="TODO"
+                  alt="Image taken from Bellagio Hotel at Las Vegas"
                 />
                 <svg
                   aria-hidden="true"

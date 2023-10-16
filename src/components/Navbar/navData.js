@@ -1,7 +1,7 @@
 export const navLinks = [
   {
     label: 'Profile',
-    pathname: '/#about',
+    pathname: '/#profile',
   },
   {
     label: 'Projects',
@@ -9,7 +9,8 @@ export const navLinks = [
   },
   {
     label: 'Resume',
-    pathname: '/#about',
+    pathname: '/#profile'
+    // pathname: '/#resume',
   },
   {
     label: 'Contact',

@@ -15,6 +15,7 @@ import { Meta } from 'components/Meta';
 import { Intro } from 'layouts/Home/Intro';
 import { Profile } from 'layouts/Home/Profile';
 import { ProjectSummary } from 'layouts/Home/ProjectSummary';
+// import { Resume } from 'layouts/Home/Resume';
 import { useEffect, useRef, useState } from 'react';
 import styles from './Home.module.css';
 
@@ -24,13 +25,14 @@ export const Home = () => {
   const [visibleSections, setVisibleSections] = useState([]);
   const [scrollIndicatorHidden, setScrollIndicatorHidden] = useState(false);
   const intro = useRef();
+  const profile = useRef();
   const projectOne = useRef();
   const projectTwo = useRef();
   const projectThree = useRef();
-  const details = useRef();
+  const resume = useRef();
 
   useEffect(() => {
-    const sections = [intro, projectOne, projectTwo, projectThree, details];
+    const sections = [intro, profile, projectOne, projectTwo, projectThree/*, resume*/];
 
     const sectionObserver = new IntersectionObserver(
       (entries, observer) => {
@@ -70,13 +72,18 @@ export const Home = () => {
       <Meta
         title="Engineer + Designer"
         description="Portfolio of Irvin Tancioco — software engineer and UX designer
-          with a focus on motion, experience design, and accessibility."
+          in exploring the intersection of software and design with a focus on experience design, and accessibility."
       />
       <Intro
         id="intro"
         sectionRef={intro}
         disciplines={disciplines}
         scrollIndicatorHidden={scrollIndicatorHidden}
+      />
+      <Profile
+        sectionRef={profile}
+        visible={visibleSections.includes(profile.current)}
+        id="profile"
       />
       <ProjectSummary
         id="project-1"
@@ -142,11 +149,6 @@ export const Home = () => {
             },
           ],
         }}
-      />
-      <Profile
-        sectionRef={details}
-        visible={visibleSections.includes(details.current)}
-        id="about"
       />
       <Footer />
     </div>
