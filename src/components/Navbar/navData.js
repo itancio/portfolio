@@ -1,25 +1,21 @@
 export const navLinks = [
   {
-    label: 'Profile',
+    label: 'About',
     pathname: '/#profile',
   },
   {
     label: 'Projects',
-    pathname: '/#project-1',
+    pathname: '/projects',
   },
   {
     label: 'Resume',
-    pathname: '/#profile'
-    // pathname: '/#resume',
+    pathname: '/resume/Irvin _Tancioco_Resume.pdf',
   },
   {
     label: 'Contact',
     pathname: '/contact',
   },
-  // {
-  //   label: 'Articles',
-  //   pathname: '/articles',
-  // },
+
 ];
 
 export const socialLinks = [

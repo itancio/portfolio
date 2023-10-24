@@ -32,7 +32,7 @@ export const Home = () => {
   const resume = useRef();
 
   useEffect(() => {
-    const sections = [intro, profile, projectOne, projectTwo, projectThree/*, resume*/];
+    const sections = [intro, profile/*, projectOne, projectTwo, projectThree, resume*/];
 
     const sectionObserver = new IntersectionObserver(
       (entries, observer) => {
@@ -85,14 +85,14 @@ export const Home = () => {
         visible={visibleSections.includes(profile.current)}
         id="profile"
       />
-      <ProjectSummary
+      {/* <ProjectSummary
         id="project-1"
         sectionRef={projectOne}
         visible={visibleSections.includes(projectOne.current)}
         index={1}
-        title="Action Map SaaS"
-        description="Agile development for civic engagement application"
-        buttonText="View project"
+        title="Code"
+        description=""
+        buttonText="View projects"
         buttonLink="/projects/smart-sparrow"
         model={{
           type: 'laptop',
@@ -111,9 +111,9 @@ export const Home = () => {
         sectionRef={projectTwo}
         visible={visibleSections.includes(projectTwo.current)}
         index={2}
-        title="End-to-End Encryption File Sharing"
-        description="Designing cryptographic file sharing"
-        buttonText="View website"
+        title="Design"
+        description=""
+        buttonText="View projects"
         buttonLink="https://gamestack.hamishw.com"
         model={{
           type: 'phone',
@@ -135,9 +135,9 @@ export const Home = () => {
         sectionRef={projectThree}
         visible={visibleSections.includes(projectThree.current)}
         index={3}
-        title="Artificial Intelligence: Pacman"
-        description="Coming Soon"
-        buttonText="View project"
+        title="Make"
+        description=""
+        buttonText="View projects"
         buttonLink="/projects/slice"
         model={{
           type: 'laptop',
@@ -149,7 +149,7 @@ export const Home = () => {
             },
           ],
         }}
-      />
+      /> */}
       <Footer />
     </div>
   );

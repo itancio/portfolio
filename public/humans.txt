@@ -10,22 +10,22 @@ and graphic assets behind this site humanstxt.org.
 
 _______________________________________________________________________________
 
-DESIGNER | デザイナー
+Software Engineer
 
-Hamish Williams
-Hand crafted design & web development
+Irvin Tancioco
+
 
 Design tools:
 Figma
 Photoshop
 Blender
 
-twitter.com/hamishmw
+
 github.com/hamishmw
 
 _______________________________________________________________________________
 
-TECHNOLOGY | テクノロジー
+TECHNOLOGY
 
 React
 Next.js
@@ -34,7 +34,7 @@ Framer Motion
 
 _______________________________________________________________________________
 
-FONTS | フォント
+FONTS
 
 Gotham
 Hiragino Kaku Gothic

@@ -20,10 +20,10 @@ import styles from './Profile.module.css';
 const ProfileText = ({ visible, titleId }) => (
   <Fragment>
     <Heading className={styles.title} data-visible={visible} level={3} id={titleId}>
-      <DecoderText text="Hi there!" start={visible} delay={250} />
+      <DecoderText text="Hello World!" start={visible} delay={250} />
     </Heading>
     <Text className={styles.description} data-visible={visible} size="l" as="p" delay={500}>
-      Irvin here. I recently graduated this summer of 2023 at the University of California Berkeley with a degree
+      I recently graduated this summer of 2023 at the University of California Berkeley with a degree
       in Electrical Engineering and Computer Science. I am transitioning into software engineering
       with a strong focus on merging human-centric design with software.I am enthusiastic
       about harnessing Machine Learning and Artificial Intelligence to drive
@@ -109,7 +109,7 @@ export const Profile = ({ id, visible, sectionRef }) => {
                   collapseDelay={1000}
                 />
                 <div className={styles.tagText} data-visible={visible}>
-                  Focusing On
+                Irvin from the Bay Area here
                 </div>
               </div>
               <div className={styles.image}>
@@ -127,7 +127,7 @@ export const Profile = ({ id, visible, sectionRef }) => {
                   height="765"
                   viewBox="0 0 135 765"
                   className={styles.svg}
-                  data-visible={visible}
+                  data-visible={false}
                 >
                   <use href={`${profileKatakana}#katakana-profile`} />
                 </svg>

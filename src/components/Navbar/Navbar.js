@@ -158,6 +158,8 @@ export const Navbar = () => {
           {navLinks.map(({ label, pathname }) => (
             (<RouterLink
               href={pathname}
+              target={label === 'Resume' ? "_blank" : "_self"}
+              rel={label === 'Resume' ? "noopener noreferrer" : ""}
               scroll={false}
               key={label}
               data-navbar-item

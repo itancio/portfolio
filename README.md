@@ -22,10 +22,11 @@ npm run dev
 To view the components storybook:
 
 ```bash
+yarn storybook
+or
 npm run storybook
 ```
-Install [storybook](#install-storybook). Install Yarn
-TODO: Make this work later. https://storybook.js.org/tutorials/intro-to-storybook/react/en/get-started/
+DOES NOT WORK ---Troubleshoot: [storybook](#troubleshoot-storybook)
 
 To create a production build:
 
@@ -33,6 +34,11 @@ This will create an executable file in the folder `/build`
 ```bash
 npm run build
 ```
+To run image optimization
+```bash
+npm i sharp
+```
+
 
 ## Deployment
 
@@ -55,6 +61,9 @@ cd functions
 ```bash
 npm run deploy:api
 ```
+
+## Publishing website
+Source: [AWS Website configuration](#instruction-for-publishing-website)
 
 ----------------------------------------------------------------------------------
 ## FAQs
@@ -89,13 +98,29 @@ npm install next@latest react@latest react-dom@latest
 ```
 Source: [Next Installation](https://nextjs.org/docs/getting-started/installation)
 
-### Install Storybook
+### Install Yarn
+```bash
+brew install yarn
+```
+Install Yarn dependencies for the Storybook
+```bash
+yarn
+```
+### Troubleshoot Storybook
 Use the Storybook CLI to install it in a single command. Run this inside your existing project’s root directory:
 ```bash
 npx storybook@latest init
 ```
 storybook init is not made for empty projects.
 Source: [Storybook Installation](https://storybook.js.org/docs/react/get-started/install)
+
+Install [storybook](#install-storybook).
+Troubleshoot: 
+-Error: can't recognize -p
+Change the `.storybook/main.js` file
+-Error: Cannot find module 'next/dist/shared/lib/router-context'. The fix is updating the next version as:
+`"next": "13.4.19" ` in package.json. Remove node_modules and package-lock.json then install them again using `npm install`. [Read this for other fixes](https://github.com/storybookjs/storybook/issues/24234)
+-
 
 ### Install AWS CLI
 ```bash
@@ -123,3 +148,6 @@ How to Retrieve Root Access Keys
 3.  Expand the Access Keys (Access Key ID and Secret Access Key) option. You will see the list of your active and deleted access keys.
 4.  To generate new access keys, click the Create New Access Key button.
 [Source: ](https://www.msp360.com/resources/blog/how-to-find-your-aws-access-key-id-and-secret-access-key/)
+
+### Instruction for publishing website
+Source:[Tutorial](https://docs.aws.amazon.com/AmazonS3/latest/userguide/website-hosting-custom-domain-walkthrough.html#root-domain-walkthrough-configure-bucket-aswebsite)  for website configuration from AWS
