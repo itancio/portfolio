@@ -11,10 +11,10 @@ export const navLinks = [
     label: 'Resume',
     pathname: '/resume/Irvin _Tancioco_Resume.pdf',
   },
-  {
-    label: 'Contact',
-    pathname: '/contact',
-  },
+  // {
+  //   label: 'Contact',
+  //   pathname: '/contact',
+  // },
 
 ];
 

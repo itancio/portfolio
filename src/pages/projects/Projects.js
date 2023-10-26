@@ -5,6 +5,7 @@ import { Divider } from 'components/Divider';
 import { Footer } from 'components/Footer';
 import { Heading } from 'components/Heading';
 import { Image } from 'components/Image';
+import { Inline, InlineItem } from 'components/Inline';
 import { Meta } from 'components/Meta';
 import { Section } from 'components/Section';
 import { SegmentedControl, SegmentedControlOption } from'components/SegmentedControl';
@@ -19,13 +20,13 @@ import styles from './Projects.module.css';
 
 const KeywordList = ({ keywords }) => {
   return (
-    <ul className={styles.keywordList}>
+      <Inline>
       {keywords.map((keyword, index) => (
-        <li key={index} className={styles.keywordItem}>
+        <InlineItem key={index}>
           {keyword}
-        </li>
+        </InlineItem>
       ))}
-    </ul>
+      </Inline>
   );
 };
 
@@ -95,10 +96,10 @@ const ProjectsPost = ({
           <Heading as="h2" level={featured ? 2 : 4}>
             {title}
           </Heading>
+          <KeywordList keywords={keywords} />
           <Text size={featured ? 'l' : 's'} as="p">
             {abstract}
           </Text>
-          <KeywordList keywords={keywords} />
           <div className={styles.postFooter}>
             <Button secondary iconHoverShift icon="arrowRight" as="div">
               View project

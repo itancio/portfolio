@@ -301,25 +301,6 @@
     animation: fadeIn 1s var(--bezierFastoutSlowin) forwards 0.9s;
   }
 
-.keywordList {
-  list-style: none;
-  flex-wrap: wrap;           /* Allow wrapping to next line */
-  padding: 5px;              /* Give some padding inside the box */
-  background-color: rgb(var(--rgbBackground)); /* Black with 40% opacity */
-  color: rgb(var(--rgbBackgroundLight));
-  border-radius: 10px;       /* Rounded corners */
-}
-
-.keywordItem {
-  display: inline-block;             /* Display keywords in a line */
-  margin: 0 5px;             /* Spacing between keywords */
-  
-}
-
-.keywordItem:last-child {
-  margin-right: 0; /* No margin for the last keyword */
-}
-
   &::after {
     content: '';
     position: absolute;

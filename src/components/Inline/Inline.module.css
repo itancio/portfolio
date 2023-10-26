@@ -1,0 +1,31 @@
+.list {
+  display: flex;
+  line-height: var(--lineHeightBody);
+
+  @nest ol& {
+    list-style-type: decimal-leading-zero;
+  }
+
+  @nest ul& {
+    list-style-type: none;
+  }
+}
+
+.item {
+
+  margin-right: 1em;
+  padding: 0.25em 1em;
+
+  border-radius: 10px;
+  border: 1px solid var(--colorTextBody);
+
+
+
+  color: var(--colorTextBody);
+  font-size: min(1em, 11px);
+  font-family: var(--monoFontStack);
+}
+
+.item:last-child {
+  margin-right: 0;
+}
