@@ -2,13 +2,13 @@ import profileKatakana from 'assets/katakana-profile.svg?url';
 import profileImgLarge from 'assets/profile-large.jpg';
 import profileImgPlaceholder from 'assets/profile-placeholder.jpg';
 import profileImg from 'assets/profile.jpg';
-import { Button } from 'components/Button';
+// import { Button } from 'components/Button';
 import { DecoderText } from 'components/DecoderText';
 import { Divider } from 'components/Divider';
 import { Heading } from 'components/Heading';
-import { Icon } from 'components/Icon';
+// import { Icon } from 'components/Icon';
 import { Image } from 'components/Image';
-import { Link } from 'components/Link';
+// import { Link } from 'components/Link';
 import { Section } from 'components/Section';
 import { Table, TableBody, TableCell, TableHeadCell, TableRow } from 'components/Table';
 import { Text } from 'components/Text';
@@ -109,7 +109,7 @@ export const Profile = ({ id, visible, sectionRef }) => {
                   collapseDelay={1000}
                 />
                 <div className={styles.tagText} data-visible={visible}>
-                Irvin from the Bay Area here
+                This is me - Irvin.
                 </div>
               </div>
               <div className={styles.image}>

@@ -7,7 +7,7 @@ import { Heading } from 'components/Heading';
 import { Image } from 'components/Image';
 import { Meta } from 'components/Meta';
 import { Section } from 'components/Section';
-import { SegmentedControl, SegmentedControlOption } from'components/SegmentedControl'
+import { SegmentedControl, SegmentedControlOption } from'components/SegmentedControl';
 import { Text } from 'components/Text';
 import { useReducedMotion } from 'framer-motion';
 import { useWindowSize } from 'hooks';
@@ -17,10 +17,23 @@ import { formatDate } from 'utils/date';
 import { classes, cssProps } from 'utils/style';
 import styles from './Projects.module.css';
 
+const KeywordList = ({ keywords }) => {
+  return (
+    <ul className={styles.keywordList}>
+      {keywords.map((keyword, index) => (
+        <li key={index} className={styles.keywordItem}>
+          {keyword}
+        </li>
+      ))}
+    </ul>
+  );
+};
+
 const ProjectsPost = ({
   slug,
   title,
   abstract,
+  keywords,
   categories,
   date,
   featured,
@@ -85,13 +98,14 @@ const ProjectsPost = ({
           <Text size={featured ? 'l' : 's'} as="p">
             {abstract}
           </Text>
+          <KeywordList keywords={keywords} />
           <div className={styles.postFooter}>
             <Button secondary iconHoverShift icon="arrowRight" as="div">
               View project
             </Button>
-            {/* <Text className={styles.timecode} size="s">
+            <Text className={styles.timecode} size="s">
               {timecode}
-            </Text> */}
+            </Text>
           </div>
         </div>
 
@@ -172,9 +186,9 @@ export const Projects = ({ posts, featured }) => {
       {filteredPosts.map(({ slug, ...post }, index) => (
         <ProjectsPost key={slug} slug={slug} index={index} {...post} />
       ))}
-      {/* {posts.map(({ slug, ...post }, index) => (
+      {posts.map(({ slug, ...post }, index) => (
         <ProjectsPost key={slug} slug={slug} index={index} {...post} />
-      ))} */}
+      ))}
       {/* Add this section if post is empty */}
       {/* {Array(0)
         .fill()

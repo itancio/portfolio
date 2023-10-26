@@ -1,6 +1,5 @@
 .footer {
   --lineHeightBody: 1.1;
-
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
@@ -14,6 +13,8 @@
 
 .link {
   display: inline-flex;
+  padding-left: var(--spaceS);
+  color: rgb(var(--colorTextLight));
 }
 
 .date {

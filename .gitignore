@@ -36,6 +36,9 @@ build/Release
 node_modules/
 jspm_packages/
 
+# Files
+rootkey.csv
+
 # Typescript v1 declaration files
 typings/
 
@@ -51,6 +54,9 @@ typings/
 # Output of 'npm pack'
 *.tgz
 
+# Systems
+.DS_Store
+
 # Yarn Integrity file
 .yarn-integrity
 
@@ -64,6 +70,3 @@ public/draco/
 public/og
 .serverless
 .next
-
-# files
-rootkey.csv
