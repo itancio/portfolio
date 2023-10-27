@@ -1,5 +1,7 @@
 .list {
   display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
   line-height: var(--lineHeightBody);
 
   @nest ol& {
@@ -12,14 +14,13 @@
 }
 
 .item {
-
+  display: inline-block;
   margin-right: 1em;
+  margin-bottom: 1em;
   padding: 0.25em 1em;
 
   border-radius: 10px;
   border: 1px solid var(--colorTextBody);
-
-
 
   color: var(--colorTextBody);
   font-size: min(1em, 11px);
