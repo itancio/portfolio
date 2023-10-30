@@ -18,3 +18,15 @@ export const InlineItem = ({ children, ...rest }) => {
     </li>
   );
 };
+
+export const KeywordList = ({ keywords }) => {
+  return (
+      <Inline>
+      {keywords.map((keyword, index) => (
+        <InlineItem key={index}>
+          {keyword}
+        </InlineItem>
+      ))}
+      </Inline>
+  );
+};

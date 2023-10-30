@@ -5,7 +5,7 @@ import { Divider } from 'components/Divider';
 import { Footer } from 'components/Footer';
 import { Heading } from 'components/Heading';
 import { Image } from 'components/Image';
-import { Inline, InlineItem } from 'components/Inline';
+import { KeywordList } from 'components/Inline';
 import { Meta } from 'components/Meta';
 import { Section } from 'components/Section';
 import { SegmentedControl, SegmentedControlOption } from'components/SegmentedControl';
@@ -18,24 +18,13 @@ import { formatDate } from 'utils/date';
 import { classes, cssProps } from 'utils/style';
 import styles from './Projects.module.css';
 
-const KeywordList = ({ keywords }) => {
-  return (
-      <Inline>
-      {keywords.map((keyword, index) => (
-        <InlineItem key={index}>
-          {keyword}
-        </InlineItem>
-      ))}
-      </Inline>
-  );
-};
+
 
 const ProjectsPost = ({
   slug,
   title,
   abstract,
   keywords,
-  categories,
   date,
   featured,
   banner,

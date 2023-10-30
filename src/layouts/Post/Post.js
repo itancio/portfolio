@@ -1,8 +1,10 @@
 import ArrowDown from 'assets/arrow-down.svg';
+import { Button } from 'components/Button';
 import { Divider } from 'components/Divider';
 import { Footer } from 'components/Footer';
 import { Heading } from 'components/Heading';
 import { Image } from 'components/Image';
+import { Inline, InlineItem, KeywordList } from 'components/Inline';
 import { Meta } from 'components/Meta';
 import { Section } from 'components/Section';
 import { Text } from 'components/Text';
@@ -16,7 +18,7 @@ import { formatDate } from 'utils/date';
 import { cssProps, msToNum, numToMs } from 'utils/style';
 import styles from './Post.module.css';
 
-export const Post = ({ children, title, date, abstract, banner, timecode, ogImage }) => {
+export const Post = ({ children, title, date, abstract, keywords, source_code, video, demo, banner, timecode, ogImage }) => {
   const scrollToHash = useScrollToHash();
   const imageRef = useRef();
   const [dateTime, setDateTime] = useState(null);
@@ -84,7 +86,16 @@ export const Post = ({ children, title, date, abstract, banner, timecode, ogImag
                   </span>
                 </span>
               ))}
+              <Inline>
+                <Button secondary iconHoverShift icon="github" href={source_code}>
+                  source code
+                </Button>
+                <Button secondary iconHoverShift icon="youtube" href={video}>
+                  video
+                </Button>
+              </Inline>
             </Heading>
+            <KeywordList keywords={keywords} />
             <div className={styles.details}>
               <RouterLink
                 href="#postContent"
