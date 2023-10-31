@@ -87,12 +87,9 @@ export const Post = ({ children, title, date, abstract, keywords, source_code, v
                 </span>
               ))}
               <Inline>
-                <Button secondary iconHoverShift icon="github" href={source_code}>
-                  source code
-                </Button>
-                <Button secondary iconHoverShift icon="youtube" href={video}>
-                  video
-                </Button>
+                {source_code ? <Button secondary iconHoverShift icon="github" href={source_code}>source code</Button> : null}
+                {video ? <Button secondary iconHoverShift icon="youtube" href={video}>video</Button> : null}
+                {demo ? <Button secondary iconHoverShift icon="game" href={demo}>demo</Button> : null}
               </Inline>
             </Heading>
             <KeywordList keywords={keywords} />

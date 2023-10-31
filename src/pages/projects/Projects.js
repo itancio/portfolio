@@ -164,7 +164,7 @@ export const Projects = ({ posts, featured }) => {
     </header>
   );
 
-  const categories = ['All', 'Code', 'Design', 'Make'];
+  const categories = ['Code', 'Design', 'Make'];
   const selectedCategory = categories[currentSegment];
   const filteredPosts = posts.filter(post => 
     post.categories && Array.isArray(post.categories) && post.categories.includes(selectedCategory)
@@ -176,9 +176,9 @@ export const Projects = ({ posts, featured }) => {
       {filteredPosts.map(({ slug, ...post }, index) => (
         <ProjectsPost key={slug} slug={slug} index={index} {...post} />
       ))}
-      {posts.map(({ slug, ...post }, index) => (
+      {/* {posts.map(({ slug, ...post }, index) => (
         <ProjectsPost key={slug} slug={slug} index={index} {...post} />
-      ))}
+      ))} */}
       {/* Add this section if post is empty */}
       {/* {Array(0)
         .fill()
@@ -202,7 +202,6 @@ export const Projects = ({ posts, featured }) => {
             currentIndex={currentSegment} 
             onChange={setCurrentSegment}
             label="Project Categories">
-            <SegmentedControlOption>All</SegmentedControlOption>
             <SegmentedControlOption>Code</SegmentedControlOption>
             <SegmentedControlOption>Design</SegmentedControlOption>
             <SegmentedControlOption>Make</SegmentedControlOption>

@@ -13,6 +13,7 @@ import Cplusplus from './svg/cplusplus.svg';
 import Css from './svg/css.svg';
 import Error from './svg/error.svg';
 import Figma from './svg/figma.svg';
+import Game from './svg/game.svg';
 import Github from './svg/github.svg';
 import Html from './svg/html.svg';
 import Illustrator from './svg/illustrator.svg';
@@ -42,6 +43,7 @@ export const icons = {
   css: Css,
   error: Error,
   figma: Figma,
+  game: Game,
   github: Github,
   html: Html,
   illustrator: Illustrator,
