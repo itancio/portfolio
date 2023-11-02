@@ -28,7 +28,7 @@ const ProfileText = ({ visible, titleId }) => (
       with a strong focus on merging human-centric design with software.I am enthusiastic
       about harnessing Machine Learning and Artificial Intelligence to drive
       responsible and ethically grounded technological innovations.
-    </Text>
+     </Text>
     <br /><br /><br /><br />
     <Heading className={styles.title} data-visible={visible} level={3}>
       <DecoderText text="Skills" start={visible} delay={750} />
@@ -70,6 +70,35 @@ const ProfileText = ({ visible, titleId }) => (
   </Fragment>
 );
 
+const ProfileHistory = ({ visible, titleId }) => (
+  <Fragment>
+    <Heading className={styles.title} data-visible={visible} level={3}>
+      <DecoderText text="My Humble beginnings" start={visible} delay={750} />
+    </Heading>
+    <Text className={styles.historyText} data-visible={visible} size="l" as="p" delay={500}>
+      Navigating life as a Filipino immigrant was a challenging odyssey. Hindered by numerous immigration obstacles, 
+      my aspirations for higher education were postponed for years, pushing me into survival mode. Lacking documentation,
+      I took on roles such as house cleaning and various odd jobs, which, though demanding and humble, I embraced with appreciation and resilience. 
+      This period, however, also ignited my curiosity in technology. Driven by a desire to innovate in online selling and website creation, 
+      I embarked on a self-taught tech journey.
+    </Text>
+
+    <Text className={styles.historyText} data-visible={visible} size="l" as="p" delay={500}>
+      A particular incident that fueled my curiosity was an encounter with a technical book filled with complex symbols and equations during a cleaning job. 
+      It intrigued me and sparked a newfound passion for mathematics. Becoming a citizen marked a significant turn in my life, enabling me 
+      to chase my deferred educational dreams.
+    </Text>
+
+    <Text className={styles.historyText} data-visible={visible} size="l" as="p" delay={500}>
+      I dived into rigorous foundational courses in math and science at a city college, eventually finding myself passionately 
+      pursuing a bachelor’s degree in computer science. Returning to college was a test of perseverance against a backdrop of 
+      limited foundational knowledge and a generational learning gap. However, fueled by determination, curiosity, and a vision to 
+      explore beyond the ordinary, I embraced the journey. Now, with a fortified spirit, I stand on the brink of new possibilities, 
+      ready to expand, innovate, and make a meaningful impact in the world.
+    </Text>
+  </Fragment>
+);
+
 export const Profile = ({ id, visible, sectionRef }) => {
   const [focused, setFocused] = useState(false);
   const titleId = `${id}-title`;
@@ -87,6 +116,7 @@ export const Profile = ({ id, visible, sectionRef }) => {
     >
       <Transition in={visible || focused} timeout={0}>
         {visible => (
+        <div>
           <div className={styles.content}>
             <div className={styles.column}>
               <ProfileText visible={visible} titleId={titleId} />
@@ -134,6 +164,10 @@ export const Profile = ({ id, visible, sectionRef }) => {
               </div>
             </div>
           </div>
+          <Text>
+            <ProfileHistory visible={visible} titleId={titleId} />
+          </Text>
+        </div>
         )}
       </Transition>
     </Section>

@@ -110,17 +110,11 @@
   }
 }
 
-.enumText {
-  margin-top: 30px;
+.historyText {
+  max-width: var(--maxWidthL);
   margin-bottom: 40px;
-  display: grid;
-  grid-template-columns: var(--space4XL) 1fr;
   gap: 12px;
   align-items: center;
-
-  @media (--mediaTablet) {
-    margin-top: 30px;
-  }
 }
 
 .image {
