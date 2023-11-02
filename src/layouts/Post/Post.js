@@ -4,7 +4,7 @@ import { Divider } from 'components/Divider';
 import { Footer } from 'components/Footer';
 import { Heading } from 'components/Heading';
 import { Image } from 'components/Image';
-import { Inline, InlineItem, KeywordList } from 'components/Inline';
+import { Inline, KeywordList } from 'components/Inline';
 import { Meta } from 'components/Meta';
 import { Section } from 'components/Section';
 import { Text } from 'components/Text';
@@ -36,6 +36,30 @@ export const Post = ({ children, title, date, abstract, keywords, source_code, v
     event.preventDefault();
     scrollToHash(event.currentTarget.href);
   };
+
+  // Function to extract domain from the URL
+  const getDomainFromUrl = (url) => {
+    const match = url.match(/:\/\/(www[0-9]?\.)?(.[^/:]+)/i);
+    if (match != null && match.length > 2 && typeof match[2] === 'string' && match[2].length > 0) {
+        return match[2].split('.')[0];
+    }
+    return null;
+  }
+
+  // Function to get the appropriate icon and label based on the domain
+  const getIconAndLabel = (url) => {
+    const domain = getDomainFromUrl(url);
+    switch(domain) {
+        case 'github':
+            return {icon: 'github', label: 'source code'};
+        case 'figma':
+            return {icon: 'figma', label: 'source file'};
+        default:
+            return {icon: 'link', label: 'link'}; // Default case
+    }
+  }
+
+  const {icon, label} = getIconAndLabel(source_code);
 
   return (
     <article className={styles.post}>
@@ -87,7 +111,7 @@ export const Post = ({ children, title, date, abstract, keywords, source_code, v
                 </span>
               ))}
               <Inline>
-                {source_code ? <Button secondary iconHoverShift icon="github" href={source_code}>source code</Button> : null}
+                {source_code ? <Button secondary iconHoverShift icon={icon} href={source_code}>{label}</Button> : null}
                 {video ? <Button secondary iconHoverShift icon="youtube" href={video}>video</Button> : null}
                 {demo ? <Button secondary iconHoverShift icon="game" href={demo}>demo</Button> : null}
               </Inline>

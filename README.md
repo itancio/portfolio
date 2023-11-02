@@ -2,7 +2,7 @@
 
 [![Site preview](/public/site-preview.png)](https://tancioco.com)
 
-My design portfolio to showcase a few projects. Built with [Next.js](https://nextjs.org/), [Three.js](https://threejs.org/), and [Framer Motion](https://www.framer.com/motion/). View the [live site](https://tancioco.com) or check out a live version of the [components storybook](https://storybook.hamishw.com).
+My design portfolio to showcase a few projects. Built with [Next.js](https://nextjs.org/), [Three.js](https://threejs.org/), and [Framer Motion](https://www.framer.com/motion/). View the [live site](www.tancioco.com).
 
 ## Install & run
 
@@ -52,7 +52,7 @@ npm run deploy
 
 Install the [command line for AWS](#install-aws-cli).
 
-Deploy serverless functions:
+Deploy serverless functions to make the contact form work. Skip this step if you don't want to use the form contact:
 
 ```bash
 cd functions
@@ -63,7 +63,13 @@ npm run deploy:api
 ```
 
 ## Publishing website
+To host static website (not secure)
 Source: [AWS Website configuration](#instruction-for-publishing-website)
+
+To add https to your website
+Source: [Use an Amazon CloudFront distribution to serve a static website](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/getting-started-cloudfront-overview.html#getting-started-prerequisites-cloudfront)
+
+[Youtube tutorial](https://www.youtube.com/watch?v=qsJSv7J4s7k) 
 
 ----------------------------------------------------------------------------------
 ## FAQs
@@ -151,3 +157,6 @@ How to Retrieve Root Access Keys
 
 ### Instruction for publishing website
 Source:[Tutorial](https://docs.aws.amazon.com/AmazonS3/latest/userguide/website-hosting-custom-domain-walkthrough.html#root-domain-walkthrough-configure-bucket-aswebsite)  for website configuration from AWS
+
+### Change CNS
+TODO edit later: Go to your domain hosting dashboard, go to DNS and change the CNS record from your AWS amazon bucket URL

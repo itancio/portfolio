@@ -1,4 +1,4 @@
-service: irvin-portfolio
+service: tancioco
 
 provider:
   name: aws
@@ -14,7 +14,7 @@ functions:
     events:
       - cloudFront:
           eventType: origin-response
-          origin: https://d39w4n5rrkxzvy.cloudfront.net
+          origin: https://d1ja01dc0305up.cloudfront.net
   api:
     handler: index.handler
     architecture: arm64
