@@ -91,7 +91,7 @@ const ProfileHistory = ({ visible, titleId }) => (
 
     <Text className={styles.historyText} data-visible={visible} size="l" as="p" delay={500}>
       I dived into rigorous foundational courses in math and science at a city college, eventually finding myself passionately 
-      pursuing a bachelor’s degree in computer science. Returning to college was a test of perseverance against a backdrop of 
+      pursuing a bachelor’s degree in EECS. Returning to college was a test of perseverance against a backdrop of 
       limited foundational knowledge and a generational learning gap. However, fueled by determination, curiosity, and a vision to 
       explore beyond the ordinary, I embraced the journey. Now, with a fortified spirit, I stand on the brink of new possibilities, 
       ready to expand, innovate, and make a meaningful impact in the world.

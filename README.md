@@ -156,7 +156,11 @@ How to Retrieve Root Access Keys
 [Source: ](https://www.msp360.com/resources/blog/how-to-find-your-aws-access-key-id-and-secret-access-key/)
 
 ### Instruction for publishing website
+1. Create bucket for [s3](https://s3.console.aws.amazon.com/s3)
+2. Create and validate certificate through [ACM](https://aws.amazon.com/certificate-manager/) to your domain managere
+3. Create distribution through [Cloudfront](https://aws.amazon.com/cloudfront/) to enable secure website
+4. Use [route53](https://aws.amazon.com/route53/) as a DNS manager to route your domain links to cloudfront distribution
 Source:[Tutorial](https://docs.aws.amazon.com/AmazonS3/latest/userguide/website-hosting-custom-domain-walkthrough.html#root-domain-walkthrough-configure-bucket-aswebsite)  for website configuration from AWS
 
-### Change CNS
-TODO edit later: Go to your domain hosting dashboard, go to DNS and change the CNS record from your AWS amazon bucket URL
+Additional step:
+When route53 was not working, I went to my domain manager and re-enter CNAMES for the root and subdomain, and cloudfront distribution link.

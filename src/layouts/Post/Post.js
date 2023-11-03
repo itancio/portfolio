@@ -45,7 +45,7 @@ export const Post = ({ children, title, date, abstract, keywords, source_code, v
         return match[2].split('.')[0];
     }
     return null;
-  }
+  };
 
   // Function to get the appropriate icon and label based on the domain
   const getIconAndLabel = (url) => {
@@ -58,7 +58,7 @@ export const Post = ({ children, title, date, abstract, keywords, source_code, v
         default:
             return {icon: 'link', label: 'link'}; // Default case
     }
-  }
+  };
 
   const {icon, label} = getIconAndLabel(source_code);
 

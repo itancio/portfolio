@@ -2,7 +2,7 @@
 title: 'CalCentral Redesign'
 abstract: "This project presents a comprehensive redesign of the UC Berkeley CalCentral website's Enrollment Center and Schedule Planner, 
     focusing on enhancing the site's user experience and visual design."
-keywords: ['figma', 'journey map', 'wireframing']
+keywords: ['figma', 'journey map', 'wireframe']
 categories: ['All', 'Design']
 date: '2023-03-17'
 banner: /static/calcentral/calcentral.png
@@ -12,40 +12,105 @@ demo:
 ---
 
 ### Project Description
-In UC Berkeley’s User Experience Design course, the assignment was to choose a website or app to redesign. 
-As UC Berkeley students, my group and I are frequent users of the CalCentral website. We are often using 
-this website to plan our schedule with the Schedule Planner feature, and to enroll for classes on Enrollment Center. 
-Although this website is pivotal for any Cal student, 
-its current format and design lacks intuitiveness and advancement. 
-In this project, our group worked towards redesigning the website, 
-and specifically the Enrollment Center and Schedule Planner tabs on CalCentral 
-to help make it more optimal, accessible, and user-friendly.
 
-### Design Challenge
-Use the concepts learned from class to perform a critique of an existing experience, identify areas for improvement, 
-and redesign the experience using the principles of visual and user experience design.
+In UC Berkeley's User Experience Design course, my group and I undertook a project to revamp the CalCentral website, 
+focusing on enhancing the user interface and functionality of the Schedule Planner and 
+Enrollment Center features. We identified these areas as critical yet lacking in intuitiveness 
+and modern design, which are essential for the website that plays a vital role in student life. 
+
+Our goal was to improve the website's overall usability, accessibility, and efficiency.
 
 ### Purpose
-The Schedule Planner tab on CalCentral allows UC Berkeley students to plan their current and future schedules by adding 
-prospective courses, and making sure that no time conflicts occur. This allows students to make more informed decisions 
-about which courses to take and gives them a better idea about how their days will look like. The Enrollment Center tab on 
-CalCentral allows users to view their current enrolled courses, view their Shopping Cart (saved courses), search for courses, 
-and enroll in classes. These features allow students 
-to make more informed decisions about the classes they would like to take.
+The Schedule Planner tab on CalCentral enables UC Berkeley students to craft their academic schedules 
+by adding potential courses and preventing scheduling conflicts, aiding in informed course selection. 
+
+The Enrollment Center tab offers functionality to view enrolled courses, manage a Shopping Cart of saved courses, 
+search for new courses, and enroll, facilitating informed decision-making regarding class choices.
 
 ### User Persona
 ![Thumbnail](/static/calcentral/calcentral_persona.png)
+Oski the Bear, a lifelong UC Berkeley learner, faces challenges with the CalCentral website during his Summer 2023 course 
+enrollment. Despite his experience with the site, he struggles to use the Schedule Planner due to its disorganized information 
+and lacks the ability to sync schedules with Google Calendar. Additionally, he finds the Enrollment Center difficult to navigate, 
+with issues such as the disappearing control panel during class searches and unnecessarily complex steps for adding classes to his cart 
+or enrolling. Oski wishes for a more streamlined and less intimidating enrollment process on CalCentral.
 
 ### Journey Map
 ![Thumbnail](/static/calcentral/calcentral_journeymap.png)
 
-### Product critique and solution
+### Identifying user pain points
+#### Enrollment Center
+1. The process to enroll or add a course to the cart is cumbersome, 
+requiring an excessive number of steps and clicks.
+2. Once in the enrollment process, the sidebar becomes inaccessible, 
+complicating the navigation between different sections.
+3. Lacks a straightforward method to return to previous pages while searching for courses.
+4. Inconsistent button placement throughout the enrollment process creates a confusing user experience.
+
+#### Schedule Planner
+1. Information is presented in a cluttered and disorganized way, with no clear visual hierarchy to guide the user.
+2. There is no capability to export the schedule from the Schedule Planner to external calendars like Google Calendar or bCal.
+
+### General product critique
 The current format and aesthetics of the Enrollment Center and Schedule Planner pages on the CalCentral website is not optimal. 
 Specifically, it is often quite challenging for users to envision their future schedule with the lack of organization and 
 aesthetics, and a plethora of unnecessary information presented on these pages. Additionally, users have a hard time searching for, 
 viewing, and enrolling and adding courses to cart due to a disorganized visual hierarchy, the lack of organization and aesthetics, 
 the absence of consistency, and an excess number of steps and clicks required to complete these tasks.
 
+### Our Redesign Walkthrough
+
+#### A. CalCentral Sign in
+
+![Thumbnail](/static/calcentral/calcentral_login2.png)
+The original design (left side) has an overabundance of whitespace due to a light background image, 
+particularly at the top, giving an impression of emptiness. 
+- The more important lower portion of the image is mostly cropped out, diminishing its impact. 
+- The page's background is unimaginative and dull in color, contributing to a monotonous and uninviting aesthetic 
+that could deter users from engaging with the website.
+
+With the new design (right side), the color palette is cohesive and aligns with the University of California, Berkeley’s branding. 
+- Colors: The blue and gold are a classic combination that represents the university's colors well. The typography is clear and easy to read.
+- Typography: The font choice is professional and suitable for an educational institution. The layout is simple and straightforward, 
+focusing on the essential elements like the CalNet ID and passphrase input fields. The use of the Berkeley logo and 
+name at the top left corner makes it clear that this is an official university page.
+- Illustration: The illustration of the Sather Tower (Campanile) is a nice touch that adds a unique and recognizable element 
+related to the UC Berkeley campus.
+
+#### B. CalCentral "My Academics" tab
+![Thumbnail](/static/calcentral/calcentral_dashboard_old.png)
+In the "My Academics" tab of the original design, applying the principle of proximity could have been more effective, 
+particularly in the "Class Enrollment" section. Here, interpreting enrollment times and dates is a challenge, 
+mainly due to the insufficient visual hierarchy and spacing amidst words and dates. This makes it challenging to ascertain 
+which pieces of information correlate and which are independent, causing potential confusion and mistakes.
+
+Enhancing the readability in this section is essential. A clearer separation of related information and effective utilization 
+of spacing could help users quickly comprehend the enrollment times and dates, reducing the likelihood of errors or misunderstandings.
+
+Furthermore, the principle of similarity could be better leveraged to distinctly separate different groups, such as "Phase 1" 
+and "Phase 2". Presently, these groups appear nearly identical, making it hard to differentiate between them, 
+increasing the chances of users referencing incorrect information inadvertently. Improvements in this area could include 
+using varied colors or typography to make each phase visually distinct, guiding users more accurately through the information.
+
+![Thumbnail](/static/calcentral/calcentral_dashboard_new.png)
+In this new design, we addressed the following design elements:
+- Consistency: The design maintains a consistent use of colors, typography, and layout across different sections 
+which helps in creating a cohesive user experience.
+- Organization: Information is organized into clear sections such as Academic Profile, Semesters, Status & Holds, etc., 
+which makes it easier to find specific information.
+- Use of Icons: Icons are used effectively next to different sections like Status & Holds, Degree Requirements, etc., 
+making it visually easier to identify different categories.
+- Color Coding: Different colors are used for different statuses like "On track", "Not started", 
+which helps in quickly identifying the status of different requirements.
+- Interactive Elements: The page includes interactive elements like drop-down menus and links 
+which can make the user experience more engaging and efficient.
+
+
+#### C. Class search
+![Thumbnail](/static/calcentral/calcentral_search_old.png)
+![Thumbnail](/static/calcentral/calcentral_search_new.png)
+
+#### D. Schedule Planner
 ![Thumbnail](/static/calcentral/calcentral_planner1.png)
 The original design (left side) emphasizes the vertical separation of filters, courses, current schedules, 
 and shopping cart categories. The placement of these blocks of information hinders the user from doing the primary task of planning classes to enroll.
