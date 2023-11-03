@@ -176,7 +176,6 @@ export const Projects = ({ posts, featured }) => {
       {filteredPosts.map(({ slug, ...post }, index) => (
         <ProjectsPost key={slug} slug={slug} index={index} {...post} />
       ))}
-
       {/* {posts.map(({ slug, ...post }, index) => (
         <ProjectsPost key={slug} slug={slug} index={index} {...post} />
       ))} */}
@@ -186,7 +185,6 @@ export const Projects = ({ posts, featured }) => {
         .map((skeleton, index) => (
           <SkeletonPost key={index} />
         ))} */}
-        
     </div>
   );
 
