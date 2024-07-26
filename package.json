@@ -6,7 +6,7 @@
   "repository": "https://github.com/itancio/portfolio.git",
   "author": "Irvin Tancioco <itancio@berkeley.edu>",
   "devDependencies": {
-    "@mapbox/rehype-prism": "^0.8.0",
+    "@mapbox/rehype-prism": "^0.9.0",
     "@storybook/addon-a11y": "^7.4.6",
     "@storybook/addon-actions": "^7.4.6",
     "@storybook/addon-controls": "^7.4.6",
@@ -30,7 +30,7 @@
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^7.7.2",
     "prettier": "^2.7.1",
-    "puppeteer": "^16.1.0",
+    "puppeteer": "^22.14.0",
     "reading-time": "^1.5.0",
     "rehype-img-size": "^1.0.1",
     "rehype-preset-minify": "^6.0.0",
@@ -44,9 +44,10 @@
   "dependencies": {
     "framer-motion": "^7.1.0",
     "mdx-bundler": "^9.0.1",
-    "next": "13.4.19",
+    "next": "^14.2.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "sharp": "^0.33.4",
     "three": "^0.146.0",
     "three-stdlib": "^2.18.1",
     "yarn": "^1.22.19"
