@@ -1,96 +1,117 @@
 ---
 title: 'Sixt33n'
-abstract: 'This is a voice controlled car project for 16B class at UC Berkeley.'
+abstract: 'This project presents the integration of intricate software algorithms and robust hardware systems 
+    to construct a voice-activated autonomous vehicle. It underscores the interplay of advanced control systems, 
+    nuanced signal processing, and the principles of machine learning, culminating in a dynamic live demonstration.'
 keywords: ['c++', 'arduino', 'soldering', 'circuit', 'op amps', 'digital-to-analog converter', 'svd', 'pca']
 categories: ['Make']
 date: '2021-05-07'
-banner: /static/hello-world-banner.jpg
+banner: /static/sixt33n/sixt33n.png
 ---
 
-### Phase 1: Circuits
-The laboratory exercise involves interfacing a mic board with a Launchpad, 
-requiring students to calibrate the analog-to-digital converter (ADC) on the Launchpad 
-to correctly interpret the mic board's output. Calibration includes adjusting the `oscope.ino` 
-file and carefully connecting the Launchpad to the mic board with precise resistor placement 
-to establish the conversion factor. The mic board must then be tuned to capture audio signals, 
-specifically a pure tone between 3000-4000 Hz, adjusting the gain to achieve a desired peak-to-peak 
-voltage. Furthermore, students are tasked with constructing a low-pass filter with a 2500 Hz cutoff 
-to isolate normal conversational voice frequencies, followed by setting up motor controller circuits 
-using BJTs and diodes for directional motor control. Finally, students are instructed to assemble 
-their SIXT33N car, test individual components, and document their processes for a project report, 
-ensuring all circuits work correctly and understanding their roles in the overall system. 
-This comprehensive setup serves as a precursor to a more complex task of controlling 
-the car via audio commands in subsequent labs.
+The SIXT33N project undertakes the ambitious task of creating a voice-activated car robot, 
+merging multifaceted components such as power systems, audio processing circuits, and control mechanisms. 
+It intricately combines a reliable power supply, a sensitive mic board, dynamic gain and buffering systems, 
+and meticulous drift elimination with sophisticated variable gain amplifiers. 
 
-### Phase 2: System Identification
-Phase 2 of the EECS 16B lab focuses on system identification for a robotic car project. 
-Students begin by installing encoders on their vehicles to measure wheel rotation. 
-After ensuring the sensors work correctly without noise interference, the car is switched 
-from wall power to battery operation for mobility. Data collection involves running the car 
-across different speeds to record wheel velocities, then applying a least-squares regression 
-analysis to estimate parameters for each wheel's operation (theta and beta). This analysis is critical 
-for understanding how the car responds to different PWM inputs and for determining an operational point 
-where both wheels can turn at the same velocity for straight movement. Students also verify the microphone 
-board's functionality, crucial for later labs involving voice control. The lab concludes with students 
-presenting their findings to a TA, discussing the importance of the collected data, the process 
-of finding theta and beta, and the rationale behind separately modeling each wheel. 
-All data collected is saved for future reference.
+The project also intricately weaves filtering techniques for signal clarity and employs PCA for 
+command classification, alongside implementing precise open and closed-loop 
+control models for accurate navigation.
 
-### Phase 3: Controls
-In the EECS16B lab, students develop an open-loop control system using a model established 
-in previous labs, simulate its performance including potential errors and noise, 
-and calculate 'jolt' values to initiate motion. This system is then programmed into a Launchpad. 
-Subsequently, a closed-loop control system is introduced to address the open-loop model's limitations 
-by incorporating feedback, enhancing the car's ability to travel in the desired direction 
-despite imperfections and disturbances. After designing the control system and conducting simulations 
-to select optimal gain values, the closed-loop system is implemented and fine-tuned on the Launchpad. 
-Finally, a comparison between the open and closed-loop systems highlights the significance of feedback 
-for maintaining control, as the car performs better with the closed-loop system in place.
+Here are the components for this project:
 
-### Phase 4: SVD/ PCA
-Phase 4 of the EECS16B SIXT33N project involves students implementing a voice recognition system 
-for a robot car using SVD and PCA. The process starts with setting up and calibrating 
-the Launchpad and microphone to accurately capture voice commands. Data is collected and preprocessed, 
-which includes enveloping to highlight the waveform shape and aligning audio snippets.
+### Mic Board
+The microphone circuit on the Mic Board is organized into four primary segments: 
+Microphone Gain, Buffer, Microphone Drift Removal, and Variable Gain Amplifier. 
+These segments streamline the processing of incoming audio signals within the circuit. 
+The microphone itself functions as a variable current source, paired with ideal operational amplifiers 
+(op-amps) that allow all current to pass exclusively through the connected resistor, 
+thereby setting the voltage at the positive terminal as a function of Vdd, Vss, 
+and the current through a 1000-ohm resistor.
 
-Using PCA, students analyze the preprocessed data to identify principal components 
-that best cluster the voice commands. They find centroids for each cluster to use for classification. 
-The system's effectiveness is tested with a new dataset to ensure the classifier can generalize 
-and accurately recognize commands, aiming for at least 80% accuracy.
+**Microphone Gain:**
+This stage amplifies the variable amplitude signals detected by the microphone, using a design 
+that mimics a variable current source.
+![Thumbnail](/static/sixt33n/sixt33n_amps.png)
 
-The project teaches students about the preprocessing steps in machine learning, feature extraction, 
-dimensionality reduction, and the practical application of these concepts to build a working voice 
-recognition system for a robotic car.
+**Buffer:**
+The buffer stage employs a unity buffer that isolates the op-amp and capacitor from the microphone, 
+ensuring no additional gain at this juncture.
 
-### Phase 5: Advanced Controls
-Phase 5 of the SIXT33N Project focuses on refining the control system of a robotic car 
-to accurately respond to voice commands and execute turns. The phase begins by implementing 
-a voice command recognition system on the Launchpad using Principal Component Analysis (PCA) 
-to classify live audio signals into commands. To enable turning, the project analyzes the relationship 
-between turn radius and wheel velocities, leading to an adjusted closed-loop control model. 
-The students then implement this model on the Launchpad, incorporating preprogrammed commands 
-for turning and straight driving. If necessary, a correction function is introduced to account 
-for mechanical imperfections that prevent the car from driving straight, ensuring the car can follow 
-a precise path as dictated by voice commands. This phase combines live audio processing with 
-advanced control techniques to achieve a responsive and accurate autonomous vehicle.
+**Microphone Drift Removal:**
+A coupling capacitor functions here as a high-pass filter with a very low corner frequency, 
+effectively eliminating low-frequency drifts such as noise and DC offset from the microphone signal.
 
-### Phase 6: Integration
-The SIXT33N Project's final phase involves integrating various components into a cohesive 
-program on the Launchpad, allowing the autonomous vehicle to execute specific voice commands 
-like moving straight or turning. This integration phase is encapsulated in the sketch 
-`integration.ino`, which requires filling out predefined code sections, particularly 
-for wheel control and voice command recognition. The car operates in two primary modes: 
-listening for voice commands (MODE_LISTEN) and driving based on recognized commands (MODE_DRIVE). 
-Students must transfer their prior work on PCA vectors and control schemes into the Launchpad 
-sketch, tweaking parameters like turn radius and drive durations to ensure accurate performance. 
-A successful demo requires SIXT33N to follow a sequence of voice commands, and the project 
-concludes with a comprehensive lab report summarizing the semester's work. The report 
-must be submitted by a specified deadline, and there's an opportunity for creative enhancements 
-in a design contest.
+**Variable Gain Amplifier and Biasing Circuit:**
+Biasing Circuits OS1 and OS2 form part of the variable gain amplifier stage to refine 
+the signal analysis. OS1 centers the signal voltage between 0V and 3.3V to offset the DC component, 
+while OS2 shifts the level, setting a 1.65V reference for the non-inverting op-amps and 
+preventing the amplification of the DC offset. The final element, a non-inverting op-amp, 
+allows for adjustable gain via its corresponding potentiometer.
+![Thumbnail](/static/sixt33n/sixt33n_micboard.png)
 
+### Filtering Process
+A band-pass filter was implemented to effectively mitigate aliasing noise, 
+leveraging a composite of second-order low and high pass filters. 
+This combination strictly retains signals within the voice command frequency spectrum 
+while discarding extraneous noise.
+
+**Buffers and Filter Integrity:**
+Buffers play a pivotal role in preserving the pure band-pass filter's transfer function 
+by providing necessary isolation between the high pass and low pass filter stages.
+
+**Filter Construction Specifics:**
+Detailed component values and formulae underpinning the construction of the filter are elaborated 
+in the following section, providing insight into the methodological approach adopted for optimal filtering.
+
+**Gain and Frequency Response Calculation:**
+The cutoff frequencies were deduced using the standard formula 
+`\( f = \frac{1}{2\pi RC} \)`
+A low pass filter with a 5100-ohm resistor and 10-nanofarad capacitor culminates in a 3120 Hz cutoff, 
+while a high pass filter composed of a 2000-ohm resistor and 100-nanofarad capacitor 
+establishes a 795 Hz cutoff. 
+
+### Controls
+**Voice Command Selection and Articulation:**
+For the autonomous vehicle project, the chosen voice commands included "tac" for a distant straight 
+trajectory, "flamingo" to signal a left turn, "inspire" for a shorter straight path, and "crescendo" 
+to initiate a right turn. The effectiveness of these commands was grounded in their distinct syllabic 
+structures and the emphasis placed during articulation. Adjustments were made to avoid word similarities, 
+such as removing "Maharbiz" and "Jaijeet," which caused classification conflicts due to their acoustic 
+resemblance to "flamingo" and "inspire."
+
+**Data Preprocessing for PCA and K-Means:**
+The preprocessing phase was critical for refining the Principal Component Analysis (PCA) 
+and K-Means clustering. By examining time-domain signals, we set thresholds to isolate relevant 
+signal segments, effectively eliminating outliers. Utilizing the first two principal components, 
+we enhanced the accuracy of the K-Means classification.
+
+**Control Systems: Open Loop and Closed Loop Models:**
+The control system was bifurcated into open and closed-loop models. 
+The open-loop model operated purely on empirically derived motor parameters and desired velocity inputs, 
+adhering to predefined control equations. Conversely, the closed-loop model incorporated a 'delta' variable 
+to account for discrepancies in wheel travel distances, harnessing feedback mechanisms to dynamically 
+correct trajectory deviations, substantiated by its own set of control equations. 
+This approach rectified errors from mechanical inconsistencies, contributing to the vehicle's precise navigation.
+
+### Refinement of Controller Parameters
+For the vehicle's controller system, the eigenvalue associated with the delta term was determined 
+to be within the range of (-1, 1), signifying a stable control model in our discrete time setting. 
+The constants kL and kR, essential for the feedback mechanism, were meticulously adjusted through 
+trial and error, ultimately settling on kL = 0.9 and kR = 0.7 for optimal stability and response.
+
+### Enabling Maneuverability
+To facilitate the vehicle's turning capability, a new formulation of the delta variable was introduced, 
+incorporating the wheelbase, denoted as l, and the desired turn radius, r. This revised model prompted 
+asymmetric power allocation to the motors—thus inducing a turn. The revised delta, 
+differing from the zero value used for straight-line travel, is described by the following relationship: 
+delta[k] = (v* * l) / (3 * r * k), which quantitatively relates the car's speed, wheelbase, 
+and turn radius to the required change in wheel distance for a turn.
+![Thumbnail](/static/sixt33n/sixt33n.png)
+
+### Reflection
 Reflecting on the project, the team acknowledged the importance of integration between software and hardware, 
 circuit design, signal processing, 
 and the impact of design choices on the difficulty of troubleshooting. 
 The project highlighted the significance of meticulous data collection, as small errors could have a compounding effect 
 on the overall system. 
-
